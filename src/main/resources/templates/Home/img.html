@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<th:block th:each="item,iterStat:${source}">
+    <article class="format-standard type-post hentry clearfix">
+
+
+        <div class="post-video" th:remove="${item.getVideoUrl()==null}? all : none">
+            <div class="video-wrapper">
+                <video  controls width="250" height="200">
+                    <source src="links/Clean-Energy-Overview-Wind Facts.mp4" th:src="${item.getVideoUrl()}" type="video/mp4">
+                </video>
+            </div>
+        </div>
+        <a href="#" title="Using Images" th:remove="${item.getImageUrl()==null}? all : none"><img
+                width="250" height="200" th:src="${item.getImageUrl()}"
+                class="attachment-std-thumbnail wp-post-image" alt="Living room"></a>
+        <header class="clearfix">
+            <h3 class="post-title">
+                <a href="single.html" th:text="${item.getContent()}">标题</a>
+            </h3>
+            <div class="post-meta clearfix">
+                <span class="like-count" th:text="${item.getRecommend()}">66</span>
+                <span class="comments"><a href="#" title="书写你的感动，让它散发正能量"
+                                          th:text="${item.getComment()}+' 评论'">3 评论</a></span>
+                <span class="date" th:text="${item.getCreateTimeStr()}">2018-05-21 22:22:00</span>
+                <span class="category"><a href="#" title="" th:text="'by '+${item.getCreatorName()==null?'未知':item.getCreatorName()}">Advanced Techniques</a></span>
+
+            </div><!-- end of post meta -->
+        </header>
+    </article>
+</th:block>
+</html>

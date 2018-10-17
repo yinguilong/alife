@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${hello}">Title</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/font-awesome/css/font-awesome.min.css">
+    <!--<link href="https://fonts.googleapis.com/css?family=Istok+Web" rel="stylesheet">-->
+    <!--<link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700" rel="stylesheet">-->
+    <link rel="stylesheet" href="/assets/css/magnific-popup.css">
+
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+</head>
+<body>
+<!-- Wrapper -->
+<section class="head" id="header">
+    <div class="wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <header class="header">
+                        <div class="inner">
+                            <!-- Logo -->
+                            <!--<a href="#menu"class="nav-bars">-->
+                                <!--<img src="images/nav_icon.svg" class="img-responsive" alt="Collapsable Navbar">-->
+                            <!--</a>-->
+                            <a href="index.html" class="logo">
+                                <span class="symbol"><img src="images/logo.png" alt="Title" /></span><span class="title">美好生活</span>
+                            </a>
+                        </div>
+                    </header>
+                    <!-- Menu -->
+                    <!--<nav id="menu">-->
+                        <!--<h2>Menu</h2>-->
+                        <!--<ul>-->
+                            <!--<li><a href="index.html">Home</a></li>-->
+                            <!--<li><a href="elements.html">Elements</a></li>-->
+                        <!--</ul>-->
+                    <!--</nav>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Main -->
+
+<section class="main-body">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <p class="drescription"><span class="orange" th:text="${wow}">心向光明，美好生活！</span></p>
+            </div>
+        </div>
+        <div class="tiles">
+            <div class="row">
+                <th:block th:each="item,iterStat:${source}">
+                    <div class="col-md-4" >
+                        <div class="a">
+                            <a href="#test-popup-3" th:href="'#test-popup-'+${iterStat.index}" class="open-popup-link">
+                                <img src="images/3.jpg" th:src="${item.getImageUrl()}" class="img-responsive" alt="Responsive image">
+                                <div class="img-hover hand-parts" th:class="${iterStat.index%3==0}?'img-hover hand-parts':(${iterStat.index%3==1}?'img-hover glass-shoes':'img-hover egg-arts')">
+                                    <div class="c-table">
+                                        <div class="ct-cell">
+                                            <h3 class="img-title" th:text="${item.getTitle()}">标题</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div id="test-popup-3" th:id="'test-popup-'+${iterStat.index}" class="white-popup mfp-hide">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="pop-up-color">
+                                        <div class="col-md-8 p-l-0 p-r-0">
+                                            <img src="images/3.jpg" th:src="${item.getImageUrl()}" class="img-responsive" alt="Responsive image">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div>
+                                                <h2 class="popup-head" th:text="${item.getTitle()}">标题</h2>
+                                            </div>
+                                            <div>
+                                                <p class="popup-parapraph" th:text="${item.getContent()}">内容</p>
+                                            </div>
+                                            <div class="pop-up-icon">
+                                                <div class="row">
+                                                    <ul class="text-center popup-social-contact">
+                                                        <li class="popup-social-icons">
+                                                            <a href="#" class="icon pop-up fa-facebook"><span class="label">Facebook</span></a>
+                                                        </li>
+                                                        <li class="popup-social-icons">
+                                                            <a href="#" class="icon pop-up fa-twitter"><span class="label">Twitter</span></a>
+                                                        </li>
+                                                        <li class="popup-social-icons">
+                                                            <a href="#" class="icon pop-up fa-google-plus"><span class="label">GooglePlus</span></a>
+                                                        </li>
+                                                        <li class="popup-social-icons">
+                                                            <a href="#" class="icon pop-up fa-pinterest"><span class="label">pinterest</span></a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br th:remove="${iterStat.index%3==2}? none: tag">
+                </th:block>
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="footer">
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 col-xs-9">
+                    <p class="right-color">&copy; Copyright 2018. All rights reserved.</p>
+                </div>
+                <div class="col-sm-4 col-xs-3" align="right">
+                    <a href="#" id="back-to-top" class="top text-right" >TOP <i class="fa fa-angle-up" aria-hidden="true"></i> </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</section>
+
+<!-- Scripts -->
+
+<script src="assets/js/jquery-3.1.0.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/jquery.magnific-popup.min.js"></script>
+
+<script src="assets/js/script.js"></script>
+
+<!--  ===== Scroll to Top ====  -->
+<script>
+    if ($('#back-to-top').length) {
+        $('#back-to-top').on('click', function (e) {
+            e.preventDefault();
+            $('html,body').animate({
+                scrollTop: 0
+            }, 700);
+        });
+    }
+</script>
+</body>
+</html>

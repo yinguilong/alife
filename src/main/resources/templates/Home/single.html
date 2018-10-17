@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${alife.getTitle()}">Title</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/images/favicon.png"/>
+
+
+    <!-- Style Sheet-->
+
+    <link rel='stylesheet' id='bootstrap-css-css' href='/css/bootstrap5152.css?ver=1.0' type='text/css' media='all'/>
+    <link rel='stylesheet' id='responsive-css-css' href='/css/responsive5152.css?ver=1.0' type='text/css' media='all'/>
+    <link rel='stylesheet' id='pretty-photo-css-css' href='/js/prettyphoto/prettyPhotoaeb9.css?ver=3.1.4' type='text/css'
+          media='all'/>
+    <link rel='stylesheet' id='main-css-css' href='/css/main5152.css?ver=1.0' type='text/css' media='all'/>
+    <link rel='stylesheet' id='custom-css-css' href='/css/custom5152.html?ver=1.0' type='text/css' media='all'/>
+
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5.js"></script></script>
+    <![endif]-->
+
+
+</head>
+<body>
+<!-- Start of Header -->
+<div class="header-wrapper">
+    <header>
+        <div class="container">
+
+
+            <div class="logo-container">
+                <!-- Website Logo -->
+                <a href="/" title="Knowledge Base Theme">
+                    <img src="/images/logo.png" alt="Knowledge Base Theme">
+                </a>
+                <span class="tag-line">心向光明，美好生活！</span>
+            </div>
+
+
+            <!-- Start of Main Navigation -->
+            <nav class="main-nav">
+                <div class="menu-top-menu-container">
+                    <ul id="menu-top-menu" class="clearfix">
+                        <li><a href="/">首页</a></li>
+                        <li><a href="home-categories-description.html">感动</a></li>
+                        <!--<li><a href="home-categories-articles.html">Home 3</a></li>-->
+                        <!--<li  class="current-menu-item"><a href="articles-list.html">Articles List</a></li>-->
+                        <!--<li><a href="faq.html">FAQs</a></li>-->
+                        <!--<li><a href="#">Skins</a>-->
+                        <!--<ul class="sub-menu">-->
+                        <!--<li><a href="blue-skin.html">Blue Skin</a></li>-->
+                        <!--<li><a href="green-skin.html">Green Skin</a></li>-->
+                        <!--<li><a href="red-skin.html">Red Skin</a></li>-->
+                        <!--<li><a href="index-2.html">Default Skin</a></li>-->
+                        <!--</ul>-->
+                        <!--</li>-->
+                        <!--<li><a href="#">More</a>-->
+                        <!--<ul class="sub-menu">-->
+                        <!--<li><a href="full-width.html">Full Width</a></li>-->
+                        <!--<li><a href="elements.html">Elements</a></li>-->
+                        <!--<li><a href="page.html">Sample Page</a></li>-->
+                        <!--</ul>-->
+                        <!--</li>-->
+                        <li><a href="contact.html">联系我们</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <!-- End of Main Navigation -->
+
+        </div>
+    </header>
+</div>
+<!-- End of Header -->
+
+<!-- Start of Search Wrapper -->
+<!-- End of Search Wrapper -->
+
+<!-- Start of Page Container -->
+<div class="page-container">
+    <div class="container">
+        <div class="row">
+
+            <div class="span8 page-content">
+
+                <article class=" type-post format-standard hentry clearfix">
+
+                    <h1 class="post-title"><a href="#" th:text="${alife.getTitle()}">xxxxx</a></h1>
+
+                    <div class="post-meta clearfix">
+                        <span class="date" th:text="${alife.getCreateTimeStr()}">25 Feb, 2013</span>
+                        <span class="category"><a href="#" title="见证人" th:text="${alife.getCreatorName()}">佚名</a></span>
+                        <span class="comments"><a href="#" title="书写你的感动，让它散发正能量" th:text="${alife.getComment()}">3</a></span>
+                        <span class="like-count" th:text="${alife.getRecommend()}">66</span>
+                    </div>
+                    <div class="post-video" th:remove="${alife.getVideoUrl()==null}? all : none">
+                        <div class="video-wrapper">
+                            <video  controls width="250" height="200">
+                                <source src="links/Clean-Energy-Overview-Wind Facts.mp4" th:src="${alife.getVideoUrl()}" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                    <a href="#" title="Using Images" th:remove="${alife.getImageUrl()==null}? all : none"><img
+                            width="250" height="200" th:src="${alife.getImageUrl()}"
+                            class="attachment-std-thumbnail wp-post-image" alt="Living room"></a>
+                <p th:text="${alife.getContent()}">
+
+                </p>
+                </article>
+
+                <div class="like-btn">
+
+                    <form id="like-it-form" action="#" method="post">
+                        <span class="like-it " th:text="${alife.getRecommend()}">66</span>
+                        <input type="hidden" name="post_id" value="99">
+                        <input type="hidden" name="action" value="like_it">
+                    </form>
+                </div>
+
+                <section id="comments">
+                    <ol class="commentlist">
+
+                        <li class="comment even thread-even depth-1" id="li-comment-2">
+                            <article id="comment-2">
+
+                                <a href="#">
+                                    <img alt="" src="http://1.gravatar.com/avatar/50a7625001317a58444a20ece817aeca?s=60&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D60&amp;r=G" class="avatar avatar-60 photo" height="60" width="60">
+                                </a>
+
+                                <div class="comment-meta">
+
+                                    <h5 class="author">
+                                        <cite class="fn">
+                                            <a href="#" rel="external nofollow" class="url">John Doe</a>
+                                        </cite>
+                                        - <a class="comment-reply-link" href="#">Reply</a>
+                                    </h5>
+
+                                    <p class="date">
+                                        <a href="#">
+                                            <time datetime="2013-02-26T13:18:47+00:00">February 26, 2013 at 1:18 pm</time>
+                                        </a>
+                                    </p>
+
+                                </div><!-- end .comment-meta -->
+
+                                <div class="comment-body">
+                                    <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
+                                    <p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem.</p>
+                                </div><!-- end of comment-body -->
+
+                            </article><!-- end of comment -->
+
+                            <ul class="children">
+
+                                <li class="comment byuser comment-author-saqib-sarwar bypostauthor odd alt depth-2" id="li-comment-3">
+                                    <article id="comment-3">
+
+                                        <a href="#">
+                                            <img alt="" src="http://0.gravatar.com/avatar/2df5eab0988aa5ff219476b1d27df755?s=60&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D60&amp;r=G" class="avatar avatar-60 photo" height="60" width="60">
+                                        </a>
+
+                                        <div class="comment-meta">
+
+                                            <h5 class="author">
+                                                <cite class="fn">saqib sarwar</cite>
+                                                - <a class="comment-reply-link" href="#">Reply</a>
+                                            </h5>
+
+                                            <p class="date">
+                                                <a href="#">
+                                                    <time datetime="2013-02-26T13:20:14+00:00">February 26, 2013 at 1:20 pm</time>
+                                                </a>
+                                            </p>
+
+                                        </div><!-- end .comment-meta -->
+
+                                        <div class="comment-body">
+                                            <p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</p>
+                                        </div><!-- end of comment-body -->
+
+                                    </article><!-- end of comment -->
+
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="comment even thread-odd thread-alt depth-1" id="li-comment-4">
+                            <article id="comment-4">
+
+                                <a href="#">
+                                    <img alt="" src="http://1.gravatar.com/avatar/50a7625001317a58444a20ece817aeca?s=60&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D60&amp;r=G" class="avatar avatar-60 photo" height="60" width="60">
+                                </a>
+
+                                <div class="comment-meta">
+
+                                    <h5 class="author">
+                                        <cite class="fn"><a href="#" rel="external nofollow" class="url">John Doe</a></cite>
+                                        - <a class="comment-reply-link" href="#">Reply</a>
+                                    </h5>
+
+                                    <p class="date">
+                                        <a href="http://knowledgebase.inspirythemes.com/integrating-wordpress-with-your-website/#comment-4">
+                                            <time datetime="2013-02-26T13:27:04+00:00">February 26, 2013 at 1:27 pm</time>
+                                        </a>
+                                    </p>
+
+                                </div><!-- end .comment-meta -->
+
+                                <div class="comment-body">
+                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. </p>
+                                    <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.</p>
+                                </div><!-- end of comment-body -->
+
+                            </article><!-- end of comment -->
+                        </li>
+                    </ol>
+
+                    <div id="respond">
+
+                        <h3>Leave a Reply</h3>
+
+                        <div class="cancel-comment-reply">
+                            <a rel="nofollow" id="cancel-comment-reply-link" href="#" style="display:none;">Click here to cancel reply.</a>
+                        </div>
+
+
+                        <form action="#" method="post" id="commentform">
+
+
+                            <p class="comment-notes">Your email address will not be published. Required fields are marked <span class="required">*</span></p>
+
+                            <div>
+                                <label for="author">Name *</label>
+                                <input class="span4" type="text" name="author" id="author" value="" size="22">
+                            </div>
+
+                            <div>
+                                <label for="email">Email *</label>
+                                <input class="span4" type="text" name="email" id="email" value="" size="22">
+                            </div>
+
+                            <div>
+                                <label for="url">Website</label>
+                                <input class="span4" type="text" name="url" id="url" value="" size="22">
+                            </div>
+
+
+                            <div>
+                                <label for="comment">Comment</label>
+                                <textarea class="span8" name="comment" id="comment" cols="58" rows="10"></textarea>
+                            </div>
+
+                            <p class="allowed-tags">You can use these HTML tags and attributes <small><code>&lt;a href="" title=""&gt; &lt;abbr title=""&gt; &lt;acronym title=""&gt; &lt;b&gt; &lt;blockquote cite=""&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=""&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=""&gt; &lt;strike&gt; &lt;strong&gt; </code></small></p>
+
+                            <div>
+                                <input class="btn" name="submit" type="submit" id="submit" value="Submit Comment">
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                </section><!-- end of comments -->
+
+            </div>
+
+
+            <!-- start of sidebar -->
+            <aside class="span4 page-sidebar">
+
+                <section class="widget">
+                    <div class="support-widget">
+                        <h3 class="title">我们希望</h3>
+                        <p class="intro">您能传递心中的那份美好，让人更热爱这个世界！</p>
+                    </div>
+                </section>
+
+
+                <!--<section class="widget">-->
+                    <!--<h3 class="title">热门分享</h3>-->
+                    <!--<ul class="articles">-->
+                        <!--<th:block th:each="item,iterStat:${hotList}">-->
+                            <!--<li class="article-entry standard">-->
+                                <!--<h4><a href="single.html" th:href="'/alife/'+${item.getId()}" th:text="${item.getTitle()}"></a></h4>-->
+                                <!--<span class="article-meta" > <a href="#" th:title="${item.getCreatorName()}" th:text="${item.getCreateTimeStr()+' by '+ item.getCreatorName()}">Server &amp; Database</a></span>-->
+                                <!--<span class="like-count" th:text="${item.getRecommend()}">66</span>-->
+                            <!--</li>-->
+                        <!--</th:block>-->
+                    <!--</ul>-->
+                <!--</section>-->
+
+
+                <section class="widget"><h3 class="title">热聊</h3>
+                    <ul>
+                        <li><a href="#" title="Lorem ipsum dolor sit amet,">Advanced Techniques</a></li>
+                        <li><a href="#" title="Lorem ipsum dolor sit amet,">Designing in WordPress</a></li>
+                        <li><a href="#" title="Lorem ipsum dolor sit amet,">Server &amp; Database</a></li>
+                        <li><a href="#" title="Lorem ipsum dolor sit amet, ">Theme Development</a></li>
+                        <li><a href="#" title="Lorem ipsum dolor sit amet,">Website Dev</a></li>
+                        <li><a href="#" title="Lorem ipsum dolor sit amet,">WordPress for Beginners</a></li>
+                        <li><a href="#" title="Lorem ipsum dolor sit amet, ">WordPress Plugins</a></li>
+                    </ul>
+                </section>
+
+                <section class="widget">
+                    <h3 class="title">Recent Comments</h3>
+                    <ul id="recentcomments">
+                        <li class="recentcomments"><a href="#" rel="external nofollow" class="url">John Doe</a> on <a
+                                href="#">Integrating WordPress with Your Website</a></li>
+                        <li class="recentcomments">saqib sarwar on <a href="#">Integrating WordPress with Your
+                            Website</a></li>
+                        <li class="recentcomments"><a href="#" rel="external nofollow" class="url">John Doe</a> on <a
+                                href="#">Integrating WordPress with Your Website</a></li>
+                        <li class="recentcomments"><a href="#" rel="external nofollow" class="url">Mr WordPress</a> on
+                            <a href="#">Installing WordPress</a></li>
+                    </ul>
+                </section>
+
+            </aside>
+            <!-- end of sidebar -->
+        </div>
+    </div>
+</div>
+<!-- End of Page Container -->
+
+<!-- Start of Footer -->
+<footer id="footer-wrapper">
+    <div id="footer" class="container">
+        <div class="row">
+
+            <div class="span3">
+                <section class="widget">
+                    <h3 class="title">How it works</h3>
+                    <div class="textwidget">
+                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+                            tincidunt ut laoreet dolore magna aliquam erat volutpat. </p>
+                        <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl
+                            ut aliquip ex ea commodo consequat. </p>
+                    </div>
+                </section>
+            </div>
+
+            <div class="span3">
+                <section class="widget"><h3 class="title">Categories</h3>
+                    <ul>
+                        <li><a href="#" title="Lorem ipsum dolor sit amet,">Advanced Techniques</a></li>
+                        <li><a href="#" title="Lorem ipsum dolor sit amet,">Designing in WordPress</a></li>
+                        <li><a href="#" title="Lorem ipsum dolor sit amet,">Server &amp; Database</a></li>
+                        <li><a href="#" title="Lorem ipsum dolor sit amet, ">Theme Development</a></li>
+                        <li><a href="#" title="Lorem ipsum dolor sit amet,">Website Dev</a></li>
+                        <li><a href="#" title="Lorem ipsum dolor sit amet,">WordPress for Beginners</a></li>
+                        <li><a href="#" title="Lorem ipsum dolor sit amet, ">WordPress Plugins</a></li>
+                    </ul>
+                </section>
+            </div>
+
+            <div class="span3">
+                <section class="widget">
+                    <h3 class="title">Latest Tweets</h3>
+                    <div id="twitter_update_list">
+                        <ul>
+                            <li>No Tweets loaded !</li>
+                        </ul>
+                    </div>
+
+                </section>
+            </div>
+
+            <div class="span3">
+                <section class="widget">
+                    <h3 class="title">Flickr Photos</h3>
+                    <div class="flickr-photos" id="basicuse">
+                    </div>
+                </section>
+            </div>
+
+        </div>
+    </div>
+    <!-- end of #footer -->
+
+    <!-- Footer Bottom -->
+    <div id="footer-bottom-wrapper">
+        <div id="footer-bottom" class="container">
+            <div class="row">
+                <div class="span6">
+                    <p class="copyright">
+                        Copyright © 2013. All Rights
+                    </p>
+                </div>
+                <div class="span6">
+                    <!-- Social Navigation -->
+                    <ul class="social-nav clearfix">
+                        <li class="linkedin"><a target="_blank" href="#"></a></li>
+                        <li class="stumble"><a target="_blank" href="#"></a></li>
+                        <li class="google"><a target="_blank" href="#"></a></li>
+                        <li class="deviantart"><a target="_blank" href="#"></a></li>
+                        <li class="flickr"><a target="_blank" href="#"></a></li>
+                        <li class="skype"><a target="_blank" href="skype:#?call"></a></li>
+                        <li class="rss"><a target="_blank" href="#"></a></li>
+                        <li class="twitter"><a target="_blank" href="#"></a></li>
+                        <li class="facebook"><a target="_blank" href="#"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End of Footer Bottom -->
+
+</footer>
+<!-- End of Footer -->
+
+<a href="#top" id="scroll-top"></a>
+
+<!-- script -->
+<script type='text/javascript' src='/js/jquery-1.8.3.min.js'></script>
+<!--<script type='text/javascript' src='js/jquery.easing.1.34e44.js?ver=1.3'></script>-->
+<!--<script type='text/javascript' src='js/prettyphoto/jquery.prettyPhotoaeb9.js?ver=3.1.4'></script>-->
+<!--<script type='text/javascript' src='js/jquery.liveSearchd5f7.js?ver=2.0'></script>-->
+<!--<script type='text/javascript' src='js/jflickrfeed.js'></script>-->
+<!--<script type='text/javascript' src='js/jquery.formd471.js?ver=3.18'></script>-->
+<!--<script type='text/javascript' src='js/jquery.validate.minfc6b.js?ver=1.10.0'></script>-->
+<!--<script type='text/javascript' src='js/custom5152.js?ver=1.0'></script>-->
+
+<script>
+    var pageIndex=1;
+    $("#btnNext").click(function () {
+        RanderPage();
+    })
+    function RanderPage() {
+        $.ajax({
+            url:"/wenzhang/"+(pageIndex++),
+            success:function (data) {
+                $("#article").append(data)
+            }
+        })
+    }
+</script>
+</body>
+</html>
